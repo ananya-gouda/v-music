@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+.background-imag {
+  background-image: url('./components/image.png');
+    background-size: cover; /* Adjust the image to cover the entire div */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    height: 100vh; 
+}

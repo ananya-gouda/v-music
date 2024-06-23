@@ -1,7 +1,7 @@
 import "./App.css";
 import { useContext, useEffect, useState } from "react";
 import Card from "./components/Card";
-import CreatePlaylist from "./components/CreatePlaylist";
+//import CreatePlaylist from "./components/CreatePlaylist";
 import { initializePlaylist } from "./initialize";
 import Navbar from "./components/Navbar";
 import { MusicContext } from "./Context";
@@ -26,7 +26,8 @@ function App() {
     setIsLoading(true);
     try {
       const response = await fetch(
-        `https://api.spotify.com/v1/search?q=${keyword}&type=track&offset=${resultOffset}`,
+        `https://v1.nocodeapi.com/ananyaggouda/spotify/aRJogsTpuQbKtyRr/search?q=${keyword}&type=track&offset=${resultOffset}`,
+        
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -56,7 +57,7 @@ function App() {
   };
 
   useEffect(() => {
-    initializePlaylist();
+    // initializePlaylist();
 
     // current client credentials will be deleted in few days
     const fetchToken = async () => {
@@ -142,23 +143,14 @@ function App() {
             <h4 className="text-center text-danger py-2">{message}</h4>
           </div>
         </div>
-        <div className="row">
-          <div className="col-12 py-5 text-center">
+        <div className="row ">
+          <div className="col-12 py-5 text-center ">
             <h1>
               <i className="bi bi-music-note-list mx-3"></i>
               v-music
             </h1>
             <h3 className="py-5">Discover music in 30 seconds</h3>
-            <div>
-              <a
-                target="_blank"
-                rel="noreferrer"
-                className="btn btn-outline-dark"
-                href="https://github.com/Vishesh-Pandey/v-music"
-              >
-                <i className="bi bi-github mx-2"></i>Github
-              </a>
-            </div>
+          
           </div>
         </div>
       </div>
@@ -169,7 +161,7 @@ function App() {
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >
-        <CreatePlaylist />
+        {/* <CreatePlaylist /> */}
       </div>
     </>
   );
